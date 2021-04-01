@@ -1,35 +1,33 @@
-'use strict';
+document.addEventListener("DOMContentLoaded", function() {
+  'use strict';
+  var videoLinks = document.querySelectorAll('._video-link');
 
-$(function() {
-  function createIframe(video) {
+  if (!videoLinks) {
+    return
+  }
+  
+  function createIframe(videoLink) {
     var iframe = document.createElement('iframe');
 
     iframe.setAttribute('allowfullscreen', '');
     iframe.setAttribute('allow', 'autoplay');
-    iframe.setAttribute('src', generateURL(video));
-    iframe.classList.add('video__media');
+    iframe.setAttribute('src', generateURL(videoLink));
 
     return iframe;
   }
 
-  function generateURL(video) {
-    return video.getAttribute('data-url') + '?rel=0&autoplay=1';
+  function generateURL(videoLink) {
+    return videoLink.getAttribute('href') + '?rel=0&autoplay=1';
   }
 
-  function setupVideo(video) {
-    var iframe = createIframe(video);
+  videoLinks.forEach(function(link) {
+    var container = link.parentNode;
+    var iframe = createIframe(link);
 
-    $(video).find('.video__link').removeAttr('href').hide('slow');
-    $(video).find('.video__btn').hide('slow');
-    $(video).addClass('active');
-    video.appendChild(iframe)
-  }
-
-  $('.video').click(
-    function() {
-      if (!$(this).hasClass('active')) {
-        setupVideo(this);
-      }
-    }
-  );
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      container.appendChild(iframe);
+      link.remove();  
+    });
+  });
 });
