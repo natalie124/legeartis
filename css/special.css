@@ -1420,13 +1420,13 @@ body.color2 .header .header__top .header__top-row .header__search .header__searc
         padding: 0;
     }
     .landing-testimontial-carousel.slick-controls--light .slick-prev--arrow {
-        left: -20px;
+        left: -15px;
         background-size: contain;
         width: 70px;
         height: 70px;
     }
     .landing-testimontial-carousel.slick-controls--light .slick-next--arrow {
-        right: -20px;
+        right: -15px;
         background-size: contain;
         width: 70px;
         height: 70px;

@@ -68,9 +68,9 @@
   padding-left: 0;
   padding-right: 0; }
 
-.header .header__top .header-form-search {
+/*.header .header__top .header-form-search {
   left: 15px;
-  right: auto; }
+  right: auto; }*/
 
 /*Переписать стили для поиска*/
 .header .header__bottom .main-menu .js-header-search.open .header__search-btn:after {
@@ -236,7 +236,9 @@
   .header__city-toggle {
     font-size: 13px; }
   .header__city-caption {
-    font-size: 13px; }
+    font-size: 0; }
+  .header__city-caption::before {
+    top: -9px; }  
   .city-modal__inner {
     width: calc(100% - 30px);
     max-width: 450px;
@@ -264,7 +266,11 @@
     position: absolute;
     left: 0;
     bottom: -58px;
-    width: 41px; } }
+    width: 41px; } 
+  .header__whatsapp span {
+    font-size: 0;
+    opacity: 0;
+    visibility: hidden; }}
 
 @media (max-width: 767px) {
   .header .header__top .header-form-search {

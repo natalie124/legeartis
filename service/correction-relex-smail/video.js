@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     iframe.setAttribute('allowfullscreen', '');
     iframe.setAttribute('allow', 'autoplay');
     iframe.setAttribute('src', generateURL(videoLink));
+    iframe.classList.add('video-iframe');
 
     return iframe;
   }
