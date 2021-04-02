@@ -291,3 +291,7 @@
 .prices-accordion ul {
     min-width: 500px;
 }
+
+.autoheight {
+    height: auto;
+}
